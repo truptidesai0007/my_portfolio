@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:#56c6ef;
+    color: aliceblue;
+}
+
+.container{
+    background-color:#292931;
+    min-height: 600px;
+    border-radius:50px;
+    margin:90px;
+    padding: 0 100px 40px 100px;
+}
+
+.header{                 
+    display:flex;        
+    justify-content:space-between;  
+    align-items:center;  
+    padding-top: 30px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.navbar{
+    display:flex;
+    margin-right: 50px;
+}
+
+.navbar a{
+    text-decoration:none;
+    margin-left:20px;
+    color:aliceblue;
+}
+
+.navbar a:hover{
+    color:#56c6ef;
+}
+
+/* TITLE */
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin:40px 0;
+}
+
+/* FILTER BUTTONS */
+.project-btn{
+    display:inline-block;
+    margin:5px;
+    padding:8px 15px;
+    background:#3eabd2;
+    color:#333;
+    border-radius:20px;
+    text-decoration:none;
+    font-size:13px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.project-btn:hover{
+    background:rgb(25, 138, 134);
+    color:#56c6ef;
+    transform:scale(1.05);
+}
+
+/* PROJECT CONTAINER */
+.projects-container{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+/* PROJECT CARD */
+.project-card{
+    background:#1f1f26;
+    width:260px;
+    padding:20px;
+    border-radius:20px;
+    margin:15px;
+    text-align:center;
+    transition:0.4s;
+    box-shadow:0 0 10px rgba(0,238,255,0.2);
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #0ef;
+}
+
+.project-card h3{
+    color:#56c6ef;
+}
+
+.project-card p{
+    font-size:14px;
+    margin:15px 0;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:70px;
+}
+
+.footer a{
+    color:rgb(20, 141, 193);
+    font-size:20px;
+    margin:10px;
+}
+
+.footer a:hover{
+    color:#56c6ef;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+
+    .header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .navbar{
+        flex-direction:column;
+        margin-right:0;
+        gap:10px;
+        margin-top:10px;
+    }
+
+    .container{
+        margin:20px;
+        padding:20px;
+    }
+}
+.dark-mode{
+    background-color:#f5f5f5;
+    color:#292931;
+}
+
+.dark-mode .container{
+    background-color:#ffffff;
+}
+
+.dark-mode .navbar a{
+    color:#292931;
+}
+
+.dark-mode .footer{
+    background-color:#ffffff;
+}
+.theme-btn{
+    width:30px;
+    height:20px;
+    margin-top:0;
+    margin-left:20px;
+    padding:0;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#3eabd2;
+}
+</style>
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header"> 
+        <h2 class="logo">Portfolio</h2>
+
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="Skills.html">Skills</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="Projects.html">Projects</a>
+            <a href="Contact.html">Contact</a>
+            <button id="themeBtn" class="theme-btn" type="button">🌙</button>
+        </div>
+    </div>
+
+    <!-- TITLE -->
+    <h2 class="section-title">My Projects</h2>
+
+    <!-- FILTER BUTTONS -->
+    <div style="text-align:center; margin-bottom:20px;">
+        <button onclick="filterProjects('all')" class="project-btn">All</button>
+        <button onclick="filterProjects('web')" class="project-btn">Web</button>
+        <button onclick="filterProjects('portfolio')" class="project-btn">Portfolio</button>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="projects-container">
+
+        <div class="project-card" data-category="web">
+            <h3>Job Sequencing Visualizer</h3>
+            <p>Interactive web app to understand job scheduling algorithm with visualization.</p>
+            <a href="https://truptidesai0007.github.io/job-sequencing/" class="project-btn">Live Demo</a>
+            <a href="https://github.com/truptidesai0007/job-sequencing" class="project-btn">GitHub</a>
+        </div>
+
+        <div class="project-card" data-category="portfolio">
+            <h3>Portfolio Website</h3>
+            <p>Personal portfolio to showcase my skills and achievements.</p>
+            <a href="https://truptidesai0007.github.io/portfolio" class="project-btn">Live Demo</a>
+            <a href="https://github.com/truptidesai0007/portfolio" class="project-btn">GitHub</a>
+        </div>
+
+        <div class="project-card" data-category="web">
+            <h3>Medical Website</h3>
+            <p>Healthcare website providing useful information.</p>
+            <a href="https://truptidesai0007.github.io/Navlai_medical/" class="project-btn">Live Demo</a>
+            <a href="https://github.com/truptidesai0007/Navlai_medical" class="project-btn">GitHub</a>
+        </div>
+
+        <div class="project-card" data-category="web">
+            <h3>Smart Study Tracker</h3>
+            <p>Study planner for tracking learning progress.</p>
+            <a href="https://truptidesai0007.github.io/SmartStudyTracker/" class="project-btn">Live Demo</a>
+            <a href="https://github.com/truptidesai0007/SmartStudyTracker" class="project-btn">GitHub</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <a href="https://wa.me/918806917954"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/trupti-desai-2a9b2b3a1"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:truptidesai0007@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+</div>
+
+<script>
+function filterProjects(category){
+
+    const projects = document.querySelectorAll('.project-card');
+
+    projects.forEach(project => {
+
+        if(category === 'all' || project.dataset.category === category){
+            project.style.display = 'block';
+        } else {
+            project.style.display = 'none';
+        }
+
+    });
+
+}
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        themeBtn.innerHTML = "☀️";
+    }else{
+        themeBtn.innerHTML = "🌙";
+    }
+
+});
+</script>
+
+</body>
+</html>
